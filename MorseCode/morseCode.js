@@ -37,8 +37,19 @@ const morseCodeMap = {
   '0' : '- - - - -'
 };
 
+const reverseMorseCodeMap = reverseMapper(morseCodeMap);
+
 const spaceBetweenLetters = '   ';
 const spaceBetweenWords = '       ';
+
+function reverseMapper(originalMap){
+  var reverseMap = {};
+  for(var key in originalMap){
+    reverseMap[originalMap[key]] = key;
+  }
+
+  return reverseMap;
+}
 
 function morseCodeEncoder(str){
   var encodedMsg = '';
